@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Navigation</title>
+    <link rel="stylesheet" href="form - Copy.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Modal styles */
+        .modal {
+            background-image: url(Screenshot\ 2024-06-01\ 220920.png);
+            background-size: cover;
+            background-position: center;
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            padding-top: 60px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 70vw; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+
+        .modal-content {
+             border-radius:4vw;
+            height: 30vw;
+            background-color: transparent;
+            margin: 5% auto; 
+            padding: 20px;
+            border: 1px solid black;
+            width: 80%; 
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-button {
+            margin-top: 20px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="wrapper" id="form2-container">
+        <form id="login-form" onsubmit="navigateToForm1(event)">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input">
+                <input type="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me </label>
+                <a href="#">Forgot password</a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <div class="register">
+                <p>Don't have an account? <a href="#">Register</a></p>
+            </div>
+        </form>
+    </div>
+
+    <div class="container" id="form1-container" style="display:none;">
+        <h1>Dog Problem Form</h1>
+        <form id="dog-problem-form" onsubmit="handleDogProblemFormSubmit(event)">
+            <div class="form-group">
+                <label for="dog-name">Dog's Name:</label>
+                <input type="text" id="dog-name" name="dogName" required>
+            </div>
+            <div class="form-group">
+                <label for="dog-age">Dog's Age:</label>
+                <input type="number" id="dog-age" name="dogAge" required>
+            </div>
+            <div class="form-group">
+                <label for="dog-breed">Dog's Breed:</label>
+                <input type="text" id="dog-breed" name="dogBreed" required>
+            </div>
+           
+            <div class="form-group">
+                <label for="Contact No">Contact NO:</label>
+                <input type="number" id="Contact NO" name="ContactNo" required>
+            </div>
+       
+            <div class="form-group">
+                <label for="problem-description">Problem Description:</label>
+                <textarea id="problem-description" name="problemDescription" rows="4" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Dog Information</h2>
+            <p id="dogInfo"></p>
+            <button <a href="./map.html">  <class="modal-button" onclick="navigateToWebsite()">Hospital's near you</a></button>
+        </div>
+    </div>
+
+    <script>
+        function navigateToForm1(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            document.getElementById('form2-container').style.display = 'none';
+            document.getElementById('form1-container').style.display = 'block';
+        }
+
+        function handleDogProblemFormSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Get the dog information from the form
+            const dogName = document.getElementById('dog-name').value;
+            const dogAge = document.getElementById('dog-age').value;
+            const dogBreed = document.getElementById('dog-breed').value;
+            const problemDescription = document.getElementById('problem-description').value;
+
+            // Display the dog information in the modal
+            document.getElementById('dogInfo').innerHTML = `
+                <strong>Dog's Name:</strong> ${dogName}<br>
+                <strong>Dog's Age:</strong> ${dogAge}<br>
+                <strong>Dog's Breed:</strong> ${dogBreed}<br>
+                <strong>Problem Description:</strong> ${problemDescription}
+            `;
+
+            // Show the modal
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        function navigateToWebsite() {
+            window.location.href = 'http://127.0.0.1:3000/map.html'; // Change to your desired URL
+        }
+    </script>
+</body>
+</html>

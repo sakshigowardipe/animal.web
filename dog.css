@@ -1,0 +1,382 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    width: 150px;
+    transition: transform 0.3s ease-in-out;
+}
+
+header .logo img:hover {
+    transform: scale(1.1);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+header nav ul li a:hover {
+    background: #555;
+    border-radius: 5px;
+    transform: translateY(-3px);
+}
+
+.hero {
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 3em;
+    animation: fadeInDown 1.5s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero button {
+    background: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hero button:hover {
+    background: #e03e00;
+    transform: translateY(-3px);
+}
+
+#services, #doctors-near-you, #best-for-your-pets, .testimonials, .blog, .newsletter, .our-team, .gallery, .faqs {
+    padding: 50px 0;
+}
+
+#services .container1, #doctors-near-you .container, #best-for-your-pets .container, .testimonials .container, .blog .container, .newsletter .container, .our-team .container, .gallery .container, .faqs .container {
+    text-align: center;
+}
+
+.service-cards, .doctor-cards, .best-products, .testimonial-carousel, .blog-posts, .team-members, .gallery-images, .faq {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-card, .doctor-card, .product, .testimonial, .blog-post, .team-member, .faq {
+    background: #f4f4f4;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-card:hover, .doctor-card:hover, .product:hover, .testimonial:hover, .blog-post:hover, .team-member:hover, .faq:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img, .doctor-card img, .product img, .testimonial img, .blog-post img, .team-member img, .gallery-images img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card img:hover, .doctor-card img:hover, .product img:hover, .testimonial img:hover, .blog-post img:hover, .team-member img:hover, .gallery-images img:hover {
+    transform: scale(1.05);
+}
+
+.service-card h3, .doctor-card h3, .product h3, .blog-post h3, .team-member h3, .faq h3 {
+    margin: 10px 0;
+}
+
+.service-card p, .doctor-card p, .product p, .blog-post p, .team-member p, .faq p {
+    font-size: 0.9em;
+}
+
+button {
+    background: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #e03e00;
+    transform: translateY(-3px);
+}
+
+.testimonials {
+    background: #f8f8f8;
+}
+
+.testimonial-carousel {
+    flex-direction: column;
+}
+
+.testimonial {
+    max-width: 400px;
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.blog {
+    background: #f8f8f8;
+}
+
+.blog-post img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-post img:hover {
+    transform: scale(1.05);
+}
+
+.blog-post {
+    width: 300px;
+}
+
+.newsletter {
+    background: #333;
+    color: white;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 300px;
+}
+
+.newsletter button {
+    background: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.newsletter button:hover {
+    background: #e03e00;
+    transform: translateY(-3px);
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .footer-links, footer .social-media {
+    margin: 10px 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: text-decoration 0.3s ease-in-out;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.our-team .team-members {
+    justify-content: center;
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+}
+
+.team-member img {
+    width: 150px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member img:hover {
+    transform: scale(1.1);
+}
+
+.gallery .gallery-images img {
+    width: 200px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery .gallery-images img:hover {
+    transform: scale(1.1);
+}
+
+.faqs .faq {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.faq h3 {
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.faq h3:hover {
+    color: #ff4500;
+}
+
+.faq p {
+    display: none;
+    padding-left: 20px;
+    font-size: 0.9em;
+}
+
+.faq.active p {
+    display: block;
+}
+
+/* Keyframe Animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.service-card:nth-child(odd) {
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.service-card:nth-child(even) {
+    animation: slideInRight 1s ease-in-out;
+}
